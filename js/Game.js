@@ -51,7 +51,7 @@ class Game {
     Player.getPlayerInfo();
     
     if(allPlayers !== undefined){
-      //var display_position = 100;
+
       background("brown");
       image(track,0,-displayHeight*4, displayWidth, displayHeight*5);
       //index of the array
@@ -74,13 +74,13 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
+          stroke(10);
+          fill("red");
+          ellipse(x,y,60,60);
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
-       
-        //textSize(15);
-        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
       }
 
     }
